@@ -3,11 +3,8 @@ import Link from "next/link";
 import { products } from "@/data";
 import ProductCard from "./ProductCard";
 import Categories from "@/components/categories";
-import { ROUTES, QUERY_PARAMS } from "@/lib/routes";
+import { ROUTES } from "@/lib/routes";
 import Filter from "../Filter";
-
-const CATEGORY_KEY = QUERY_PARAMS.CATEGORY;
-const SORT_KEY = QUERY_PARAMS.SORT;
 
 interface ProductListProps {
   pathname?: string;

@@ -63,7 +63,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                 <div
                   className={`cursor-pointer ring-1 ${
                     productType.color === color
-                      ? "ring-gray-600"
+                      ? "ring-gray-800"
                       : "ring-gray-400"
                   } rounded-full p-0.5`}
                   key={color}

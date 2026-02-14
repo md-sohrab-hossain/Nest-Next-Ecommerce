@@ -2,8 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
-import { Bell, Home, ShoppingCart } from "lucide-react";
+import { Bell, Home } from "lucide-react";
 import { ROUTES } from "@/lib/routes";
+import ShoppingCartIcon from "./ShoppingCartIcon";
 
 const Navbar = () => {
   return (
@@ -28,7 +29,7 @@ const Navbar = () => {
           <Home className="w-4 h-4 text-gray-400" />
         </Link>
         <Bell className="w-4 h-4 text-gray-400" />
-        <ShoppingCart className="w-4 h-4 text-gray-400" />
+        <ShoppingCartIcon />
         <Link href={ROUTES.LOGIN}>SignIn</Link>
       </div>
     </nav>
