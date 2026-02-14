@@ -1,13 +1,8 @@
-import ProductList from "@/components/ProductList";
+import ProductList from "@/components/products/ProductList";
 import Image from "next/image";
+import { ROUTES } from "@/lib/routes";
 
-interface HomepageProps {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}
-
-const Homepage = async ({ searchParams }: HomepageProps) => {
-  const resolvedSearchParams = await searchParams;
-
+const Homepage = async ({ searchParams }: RouteParams) => {
   return (
     <div className="">
       <div className="relative aspect-[3/1] mb-12">
@@ -15,7 +10,7 @@ const Homepage = async ({ searchParams }: HomepageProps) => {
       </div>
 
       <div>
-        <ProductList searchParams={resolvedSearchParams} />
+        <ProductList searchParams={searchParams} pathname={ROUTES.HOME} />
       </div>
     </div>
   );

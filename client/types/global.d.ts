@@ -1,3 +1,4 @@
 interface RouteParams {
-  searchParams: { [key: string]: string | string[] | undefined };
+  params?: Promise<Record<string, string>>;
+  searchParams?: Promise<Record<string, string>>;
 }

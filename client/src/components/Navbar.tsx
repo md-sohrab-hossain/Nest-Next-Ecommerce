@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
 import { Bell, Home, ShoppingCart } from "lucide-react";
+import { ROUTES } from "@/lib/routes";
 
 const Navbar = () => {
   return (
     <nav className="w-full flex items-center justify-between border-b border-gray-200 pb-4">
       {/* LEFT */}
-      <Link href="/" className="flex items-center">
+      <Link href={ROUTES.HOME} className="flex items-center">
         <Image
           src="/logo.png"
           alt="shopping"
@@ -21,17 +22,14 @@ const Navbar = () => {
         </p>
       </Link>
       {/* RIGHT */}
-      <div 
-        suppressHydrationWarning
-        className="flex items-center gap-6"
-      >
+      <div suppressHydrationWarning className="flex items-center gap-6">
         <SearchBar />
-        <Link href="/home">
+        <Link href={ROUTES.HOME}>
           <Home className="w-4 h-4 text-gray-400" />
         </Link>
         <Bell className="w-4 h-4 text-gray-400" />
         <ShoppingCart className="w-4 h-4 text-gray-400" />
-        <Link href="/login">SignIn</Link>
+        <Link href={ROUTES.LOGIN}>SignIn</Link>
       </div>
     </nav>
   );
