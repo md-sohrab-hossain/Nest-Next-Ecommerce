@@ -1,5 +1,6 @@
 import { CartItemType } from "@/types";
 import { CartActionButton } from "./CartActionButton";
+import { CheckoutStep } from "@/types/checkout";
 
 type CartDetailsProps = {
   items: CartItemType[];
@@ -13,7 +14,7 @@ export const CartDetails = ({ items, currentStep }: CartDetailsProps) => {
   );
 
   return (
-    <div className="w-full lg:w-5/12 shadow-lg border-1 border-gray-100 p-8 rounded-lg flex flex-col gap-8">
+    <div className="w-full lg:w-5/12 shadow-lg border-1 border-gray-100 p-8 rounded-lg flex flex-col gap-8 h-max">
       <h2 className="font-semibold">Cart Details</h2>
       <div className="flex flex-col gap-4">
         <div className="text-sm flex justify-between">
@@ -41,8 +42,8 @@ export const CartDetails = ({ items, currentStep }: CartDetailsProps) => {
         </div>
       </div>
 
-      {currentStep === 1 && (
-        <CartActionButton activeStep={currentStep} queryKey="step" />
+      {currentStep === CheckoutStep.CART && (
+        <CartActionButton activeStep={CheckoutStep.CART} />
       )}
     </div>
   );

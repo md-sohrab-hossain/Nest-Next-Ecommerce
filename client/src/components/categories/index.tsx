@@ -16,7 +16,7 @@ const Categories = async ({
   searchParams,
   pathname = "/",
 }: CategoriesProps) => {
-  const params = searchParams ? await searchParams : {};
+  const params = (await searchParams) || {};
   const selectedCategory = (params[KEY] as string) || DEFAULT_CATEGORY;
 
   return (
