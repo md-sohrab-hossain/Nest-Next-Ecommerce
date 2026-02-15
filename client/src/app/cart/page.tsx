@@ -1,10 +1,9 @@
 import { CartDetails } from "@/components/cart/CartDetails";
 import { CartItemList } from "@/components/cart/CartItemList";
 import { QUERY_PARAMS, ROUTE_DEFAULTS } from "@/lib/routes";
-import CartSteps from "@/components/CartSteps";
-import { cartItems } from "@/data";
 import ShippingForm from "@/components/cart/ShippingForm";
 import PaymentForm from "@/components/cart/PaymentForm";
+import CartSteps from "@/components/CartSteps";
 
 interface CartPageProps {
   searchParams: RouteParams["searchParams"];
@@ -22,29 +21,29 @@ const CartPage = async ({ searchParams }: CartPageProps) => {
       case 1:
         return (
           <>
-            <CartItemList items={cartItems} />
-            <CartDetails items={cartItems} currentStep={activeStep} />
+            <CartItemList />
+            <CartDetails currentStep={activeStep} />
           </>
         );
       case 2:
         return (
           <>
             <ShippingForm currentStep={activeStep} />
-            <CartDetails items={cartItems} currentStep={activeStep} />
+            <CartDetails currentStep={activeStep} />
           </>
         );
       case 3:
         return (
           <>
             <PaymentForm currentStep={activeStep} />
-            <CartDetails items={cartItems} currentStep={activeStep} />
+            <CartDetails currentStep={activeStep} />
           </>
         );
       default:
         return (
           <>
-            <CartItemList items={cartItems} />
-            <CartDetails items={cartItems} currentStep={activeStep} />
+            <CartItemList />
+            <CartDetails currentStep={activeStep} />
           </>
         );
     }

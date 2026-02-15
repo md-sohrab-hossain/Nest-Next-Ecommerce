@@ -11,8 +11,11 @@ import {
   PAYMENT_METHODS,
   PAYMENT_FORM_FIELDS,
 } from "@/config/paymentFormConfig";
-import { PaymentFormInputs, paymentFormSchema } from "@/types";
-import { CheckoutStep } from "@/types/checkout";
+import {
+  CheckoutStep,
+  PaymentFormInputs,
+  paymentFormSchema,
+} from "../../../types";
 
 type PaymentFormProps = {
   currentStep: number;

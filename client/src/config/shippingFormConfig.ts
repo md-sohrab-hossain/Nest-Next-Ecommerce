@@ -1,4 +1,4 @@
-import { ShippingFormInputs } from "@/types";
+import { ShippingFormInputs } from "../../types";
 
 export const SHIPPING_FORM_FIELDS: Array<{
   name: keyof ShippingFormInputs;

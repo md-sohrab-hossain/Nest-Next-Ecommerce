@@ -1,14 +1,17 @@
-import { CartItemType } from "@/types";
+"use client";
+
 import { CartActionButton } from "./CartActionButton";
-import { CheckoutStep } from "@/types/checkout";
+import { CheckoutStep } from "../../../types";
+import useCartStore from "@/store/cartStore";
 
 type CartDetailsProps = {
-  items: CartItemType[];
   currentStep: number;
 };
 
-export const CartDetails = ({ items, currentStep }: CartDetailsProps) => {
-  const subtotal = items.reduce(
+export const CartDetails = ({ currentStep }: CartDetailsProps) => {
+  const { cart } = useCartStore();
+
+  const subtotal = cart.reduce(
     (acc, item) => acc + item.quantity * item.price,
     0,
   );

@@ -7,8 +7,11 @@ import { ROUTES } from "@/lib/routes";
 import { CartActionButton } from "./CartActionButton";
 import { FormField } from "./FormField";
 import { SHIPPING_FORM_FIELDS } from "@/config/shippingFormConfig";
-import { ShippingFormInputs, shippingFormSchema } from "@/types";
-import { CheckoutStep } from "@/types/checkout";
+import {
+  CheckoutStep,
+  ShippingFormInputs,
+  shippingFormSchema,
+} from "../../../types";
 
 type ShippingFormProps = {
   currentStep: number;

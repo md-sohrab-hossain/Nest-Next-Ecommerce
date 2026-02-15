@@ -13,6 +13,12 @@ export type ProductType = {
 
 export type ProductsType = ProductType[];
 
+export enum CheckoutStep {
+  CART = 1,
+  SHIPPING = 2,
+  PAYMENT = 3,
+}
+
 export type CartItemType = ProductType & {
   quantity: number;
   selectedSize: string;
@@ -54,7 +60,7 @@ export type PaymentFormInputs = z.infer<typeof paymentFormSchema>;
 
 export type CartStoreStateType = {
   cart: CartItemsType;
-  hasHydrated: boolean;
+  hasHydrated?: boolean;
 };
 
 export type CartStoreActionsType = {

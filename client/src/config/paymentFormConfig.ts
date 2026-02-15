@@ -1,4 +1,4 @@
-import { PaymentFormInputs } from "@/types";
+import { PaymentFormInputs } from "../../types";
 
 export const PAYMENT_FORM_FIELDS: Array<{
   name: keyof PaymentFormInputs;

@@ -3,7 +3,7 @@ import qs from "query-string";
 const DEFAULT_BASE_URL = "/";
 
 export const updateUrlQuery = (
-  params: string | Record<string, any>,
+  params: string | Record<string, string>,
   key: string,
   value: string | null,
   baseUrl = DEFAULT_BASE_URL,
@@ -19,7 +19,7 @@ export const updateUrlQuery = (
 };
 
 export const removeKeysFormUrlQuery = (
-  params: string | Record<string, any>,
+  params: string | Record<string, string>,
   keysToRemove: string[],
   baseUrl = DEFAULT_BASE_URL,
 ) => {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Loader2, ShoppingCart } from "lucide-react";
 import { ROUTES } from "@/lib/routes";
-import { CheckoutStep } from "@/types/checkout";
+import { CheckoutStep } from "../../../types";
 
 const BUTTON_CONFIG = {
   [CheckoutStep.CART]: {

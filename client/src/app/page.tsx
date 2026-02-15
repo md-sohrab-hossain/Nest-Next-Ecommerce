@@ -1,6 +1,6 @@
-import ProductList from "@/components/products/ProductList";
 import Image from "next/image";
 import { ROUTES } from "@/lib/routes";
+import ProductList from "@/components/products/ProductList";
 
 const Homepage = async ({ searchParams }: RouteParams) => {
   return (

@@ -1,6 +1,6 @@
-import ProductList from "@/components/products/ProductList";
 import React from "react";
 import { ROUTES } from "@/lib/routes";
+import ProductList from "@/components/products/ProductList";
 
 const ProductsPage = async ({ searchParams }: RouteParams) => {
   return (
