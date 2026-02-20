@@ -1,6 +1,6 @@
 "use client";
 
-import { useTransition, useState } from "react";
+import { useState } from "react";
 import useCartStore from "@/store/cartStore";
 import { type ProductType } from "@app-types/index";
 import { Plus, ShoppingCart } from "lucide-react";
@@ -23,7 +23,6 @@ const ProductInteraction = ({
   selectedColor,
 }: ProductInteractionProps) => {
   const [quantity, setQuantity] = useState(1);
-  const [isPending, startTransition] = useTransition();
   const { addToCart } = useCartStore();
 
   const handleQuantityChange = (type: "increment" | "decrement") => {
@@ -33,11 +32,9 @@ const ProductInteraction = ({
   };
 
   const handleAddToCart = () => {
-    startTransition(() => {
-      addToCart({ ...product, quantity, selectedColor, selectedSize });
-      toast.success(`${product.name} added to cart!`, {
-        position: "bottom-right",
-      });
+    addToCart({ ...product, quantity, selectedColor, selectedSize });
+    toast.success(`${product.name} added to cart!`, {
+      position: "bottom-right",
     });
   };
 
@@ -72,7 +69,6 @@ const ProductInteraction = ({
 
         <Button
           onClick={handleAddToCart}
-          isLoading={isPending}
           fullWidth
           className="sm:w-auto h-12 flex-1 cursor-pointer"
         >

@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import { CartDetails } from "@/components/cart/CartDetails";
 import { CartItemList } from "@/components/cart/CartItemList";
 import { QUERY_PARAMS, ROUTE_DEFAULTS } from "@/lib/routes";
 import ShippingForm from "@/components/cart/ShippingForm";
 import PaymentForm from "@/components/cart/PaymentForm";
 import CartSteps from "@/components/CartSteps";
+
+export const metadata: Metadata = {
+  title: "Shopping Cart",
+  description: "Review your cart and proceed to checkout at TopTen.",
+  robots: { index: false, follow: false },
+};
 
 interface CartPageProps {
   searchParams: RouteParams["searchParams"];

@@ -1,6 +1,18 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { ROUTES } from "@/lib/routes";
 import ProductList from "@/components/products/ProductList";
+
+export const metadata: Metadata = {
+  title: { absolute: "TopTen | Premium Fashion & Apparel Store" },
+  description:
+    "Shop the latest fashion trends at TopTen. Browse premium t-shirts, shoes, jackets, accessories, and more at unbeatable prices.",
+  openGraph: {
+    title: "TopTen | Premium Fashion & Apparel Store",
+    description:
+      "Shop the latest fashion trends at TopTen. Browse premium t-shirts, shoes, jackets, accessories, and more at unbeatable prices.",
+  },
+};
 
 const Homepage = async ({ searchParams }: RouteParams) => {
   return (
